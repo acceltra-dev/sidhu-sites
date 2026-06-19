@@ -1,4 +1,5 @@
-import os
+import os, html
+from _alberta_blog_pa import PA
 CITIES={
  'alberta-calgary':('Calgary','(403) 200-3226','+14032003226'),
  'alberta-edmonton':('Edmonton','(780) 886-8077','+17808868077'),
@@ -95,12 +96,16 @@ for d,(city,phone,tel) in CITIES.items():
     cards=''
     for a in ARTICLES:
         img=f"https://images.unsplash.com/photo-{a['img']}?auto=format&fit=crop&w=640&q=70"
+        pa=PA[a['slug']]
+        tg=html.escape(pa['tag'],quote=True)
+        tt=html.escape(pa['title'].replace('{{CITY}}',city),quote=True)
+        ex=html.escape(pa['excerpt'].replace('{{CITY}}',city),quote=True)
         cards+=(f'<a class="card" href="{a["slug"]}/">'
                 f'<div class="thumb" style="background-image:url(\'{img}\')"></div>'
-                f'<div class="body"><div class="tag">{a["tag"]}</div>'
-                f'<h2>{a["title"].replace("{{CITY}}",city)}</h2>'
-                f'<p>{a["excerpt"].replace("{{CITY}}",city)}</p>'
-                f'<div class="read">Read more</div></div></a>')
+                f'<div class="body"><div class="tag" data-pa="{tg}">{a["tag"]}</div>'
+                f'<h2 data-pa="{tt}">{a["title"].replace("{{CITY}}",city)}</h2>'
+                f'<p data-pa="{ex}">{a["excerpt"].replace("{{CITY}}",city)}</p>'
+                f'<div class="read" data-pa="ਹੋਰ ਪੜ੍ਹੋ">Read more</div></div></a>')
     idx=fill(IDX,UP='../',CITY=city,PHONE=phone,TEL=tel,CARDS=cards)
     os.makedirs(f'{d}/blog',exist_ok=True); open(f'{d}/blog/index.html','w',encoding='utf-8').write(idx)
     # articles
@@ -108,10 +113,13 @@ for d,(city,phone,tel) in CITIES.items():
         more=''.join(f'<a href="../{o["slug"]}/">{o["title"].replace("{{CITY}}",city)}</a>'
                      for o in ARTICLES if o['slug']!=a['slug'])
         img=f"https://images.unsplash.com/photo-{a['img']}"
+        pa=PA[a['slug']]
         page=fill(ART,UP='../../',CITY=city,PHONE=phone,TEL=tel,IMAGE=img,
                   TITLE=a['title'].replace('{{CITY}}',city),
                   EXCERPT=a['excerpt'].replace('{{CITY}}',city),
-                  BODY=a['body'].replace('{{CITY}}',city),MORE=more)
+                  BODY=a['body'].replace('{{CITY}}',city),MORE=more,
+                  TITLE_PA=html.escape(pa['title'].replace('{{CITY}}',city),quote=True),
+                  BODY_PA=html.escape(pa['body'].replace('{{CITY}}',city),quote=True))
         os.makedirs(f'{d}/blog/{a["slug"]}',exist_ok=True)
         open(f'{d}/blog/{a["slug"]}/index.html','w',encoding='utf-8').write(page); made+=1
     # repoint nav Blog link -> local relative blog/

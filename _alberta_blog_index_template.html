@@ -40,22 +40,35 @@ footer a{color:var(--gold);text-decoration:none}
 <body>
 <nav class="nav">
   <a class="logo" href="{{UP}}">Alberta <span>Accident Law</span></a>
-  <a class="call" href="tel:{{TEL}}">Call {{PHONE}}</a>
+  <div style="display:flex;gap:.7rem;align-items:center">
+    <button class="langtoggle" onclick="abToggle()" style="background:none;border:1px solid rgba(201,160,64,.5);color:var(--gold);font-weight:600;font-size:.82rem;padding:.45rem .8rem;border-radius:100px;cursor:pointer;font-family:inherit">ਪੰਜਾਬੀ</button>
+    <a class="call" href="tel:{{TEL}}">Call {{PHONE}}</a>
+  </div>
 </nav>
 <header class="bhead">
-  <div class="eyebrow">{{CITY}} &middot; Injury Law Blog</div>
-  <h1>Know Your Rights. Get Every Dollar.</h1>
-  <p>Plain-English guides to Alberta injury claims, and how to make sure you recover the <strong>maximum compensation</strong> you are truly owed.</p>
+  <div class="eyebrow" data-pa="{{CITY}} &middot; ਸੱਟ ਕਾਨੂੰਨ ਬਲੌਗ">{{CITY}} &middot; Injury Law Blog</div>
+  <h1 data-pa="ਆਪਣੇ ਹੱਕ ਜਾਣੋ। ਹਰ ਡਾਲਰ ਲਵੋ।">Know Your Rights. Get Every Dollar.</h1>
+  <p data-pa="ਅਲਬਰਟਾ ਸੱਟ ਦੇ ਦਾਅਵਿਆਂ ਬਾਰੇ ਸਾਦੀ ਭਾਸ਼ਾ ਵਿੱਚ ਗਾਈਡ, ਅਤੇ ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਦਾ ਤਰੀਕਾ ਕਿ ਤੁਸੀਂ ਉਹ <strong>ਵੱਧ ਤੋਂ ਵੱਧ ਮੁਆਵਜ਼ਾ</strong> ਵਸੂਲ ਕਰੋ ਜਿਸ ਦੇ ਤੁਸੀਂ ਸੱਚਮੁੱਚ ਹੱਕਦਾਰ ਹੋ।">Plain-English guides to Alberta injury claims, and how to make sure you recover the <strong>maximum compensation</strong> you are truly owed.</p>
 </header>
 <main class="grid">{{CARDS}}</main>
 <section class="cta">
-  <h2>Think your offer is too low? It usually is.</h2>
-  <p>Get a free review and find out what your {{CITY}} claim is really worth.</p>
-  <a class="btn" href="{{UP}}#contact">Get My Free Case Review</a>
+  <h2 data-pa="ਸੋਚਦੇ ਹੋ ਤੁਹਾਡੀ ਪੇਸ਼ਕਸ਼ ਬਹੁਤ ਘੱਟ ਹੈ? ਆਮ ਤੌਰ 'ਤੇ ਹੁੰਦੀ ਹੈ।">Think your offer is too low? It usually is.</h2>
+  <p data-pa="ਮੁਫ਼ਤ ਸਮੀਖਿਆ ਲਵੋ ਅਤੇ ਜਾਣੋ ਕਿ ਤੁਹਾਡਾ {{CITY}} ਦਾਅਵਾ ਅਸਲ ਵਿੱਚ ਕਿੰਨੇ ਦਾ ਹੈ।">Get a free review and find out what your {{CITY}} claim is really worth.</p>
+  <a class="btn" href="{{UP}}#contact" data-pa="ਮੇਰੀ ਮੁਫ਼ਤ ਕੇਸ ਸਮੀਖਿਆ ਲਵੋ">Get My Free Case Review</a>
 </section>
 <footer>
   &copy; 2026 Alberta Accident Law &middot; <a href="{{UP}}">{{CITY}} home</a> &middot; <a href="tel:{{TEL}}">{{PHONE}}</a><br>
   No fee unless we win. This page is legal information, not legal advice.
 </footer>
+<script>
+(function(){var K='ablang';
+ function set(l){document.querySelectorAll('[data-pa]').forEach(function(el){if(!el.dataset.en)el.dataset.en=el.innerHTML;el.innerHTML=(l==='pa')?el.dataset.pa:el.dataset.en;});
+  document.documentElement.lang=(l==='pa')?'pa':'en';
+  document.querySelectorAll('.langtoggle').forEach(function(b){b.textContent=(l==='pa')?'English':'ਪੰਜਾਬੀ';});
+  try{localStorage.setItem(K,l);}catch(e){}}
+ window.abToggle=function(){var c=(localStorage.getItem(K)==='pa')?'pa':'en';set(c==='pa'?'en':'pa');};
+ document.addEventListener('DOMContentLoaded',function(){try{if(localStorage.getItem(K)==='pa')set('pa');}catch(e){}});
+})();
+</script>
 </body>
 </html>

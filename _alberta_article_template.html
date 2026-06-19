@@ -44,27 +44,41 @@ footer a{color:var(--gold);text-decoration:none}
 <body>
 <nav class="nav">
   <a class="logo" href="{{UP}}">Alberta <span>Accident Law</span></a>
-  <a class="call" href="tel:{{TEL}}">Call {{PHONE}}</a>
+  <div style="display:flex;gap:.7rem;align-items:center">
+    <button class="langtoggle" onclick="abToggle()" style="background:none;border:1px solid rgba(201,160,64,.5);color:var(--gold);font-weight:600;font-size:.82rem;padding:.45rem .8rem;border-radius:100px;cursor:pointer;font-family:inherit">ਪੰਜਾਬੀ</button>
+    <a class="call" href="tel:{{TEL}}">Call {{PHONE}}</a>
+  </div>
 </nav>
 <header class="ahero"><div class="ahero-in">
   <div class="crumb"><a href="{{UP}}">{{CITY}}</a> &middot; <a href="{{UP}}blog/">Blog</a></div>
-  <h1>{{TITLE}}</h1>
+  <h1 data-pa="{{TITLE_PA}}">{{TITLE}}</h1>
 </div></header>
-<article>{{BODY}}
-  <div class="disc">This article is general legal information for {{CITY}}, Alberta and is not legal advice. Every claim is different, contact us for advice on your specific situation.</div>
+<article>
+  <div data-pa="{{BODY_PA}}">{{BODY}}</div>
+  <div class="disc" data-pa="ਇਹ ਲੇਖ {{CITY}}, ਅਲਬਰਟਾ ਲਈ ਆਮ ਕਾਨੂੰਨੀ ਜਾਣਕਾਰੀ ਹੈ ਅਤੇ ਕਾਨੂੰਨੀ ਸਲਾਹ ਨਹੀਂ ਹੈ। ਹਰ ਦਾਅਵਾ ਵੱਖਰਾ ਹੁੰਦਾ ਹੈ, ਆਪਣੀ ਖਾਸ ਸਥਿਤੀ ਲਈ ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।">This article is general legal information for {{CITY}}, Alberta and is not legal advice. Every claim is different, contact us for advice on your specific situation.</div>
 </article>
 <section class="cta">
-  <h2>Injured in {{CITY}}? Get a free case review.</h2>
-  <p>No fee unless we win. Honest advice, no pressure.</p>
-  <a class="btn" href="{{UP}}#contact">Start My Free Review</a>
+  <h2 data-pa="{{CITY}} ਵਿੱਚ ਜ਼ਖਮੀ ਹੋ? ਮੁਫ਼ਤ ਕੇਸ ਸਮੀਖਿਆ ਲਵੋ।">Injured in {{CITY}}? Get a free case review.</h2>
+  <p data-pa="ਜਦੋਂ ਤੱਕ ਅਸੀਂ ਜਿੱਤਦੇ ਨਹੀਂ, ਕੋਈ ਫੀਸ ਨਹੀਂ। ਇਮਾਨਦਾਰ ਸਲਾਹ, ਕੋਈ ਦਬਾਅ ਨਹੀਂ।">No fee unless we win. Honest advice, no pressure.</p>
+  <a class="btn" href="{{UP}}#contact" data-pa="ਮੇਰੀ ਮੁਫ਼ਤ ਸਮੀਖਿਆ ਸ਼ੁਰੂ ਕਰੋ">Start My Free Review</a>
 </section>
 <section class="more"><div class="more-in">
-  <h3>More from the blog</h3>
+  <h3 data-pa="ਬਲੌਗ ਤੋਂ ਹੋਰ">More from the blog</h3>
   <div class="more-grid">{{MORE}}</div>
 </div></section>
 <footer>
   &copy; 2026 Alberta Accident Law &middot; <a href="{{UP}}">{{CITY}} home</a> &middot; <a href="{{UP}}blog/">Blog</a> &middot; <a href="tel:{{TEL}}">{{PHONE}}</a><br>
   No fee unless we win. This page is legal information, not legal advice.
 </footer>
+<script>
+(function(){var K='ablang';
+ function set(l){document.querySelectorAll('[data-pa]').forEach(function(el){if(!el.dataset.en)el.dataset.en=el.innerHTML;el.innerHTML=(l==='pa')?el.dataset.pa:el.dataset.en;});
+  document.documentElement.lang=(l==='pa')?'pa':'en';
+  document.querySelectorAll('.langtoggle').forEach(function(b){b.textContent=(l==='pa')?'English':'ਪੰਜਾਬੀ';});
+  try{localStorage.setItem(K,l);}catch(e){}}
+ window.abToggle=function(){var c=(localStorage.getItem(K)==='pa')?'pa':'en';set(c==='pa'?'en':'pa');};
+ document.addEventListener('DOMContentLoaded',function(){try{if(localStorage.getItem(K)==='pa')set('pa');}catch(e){}});
+})();
+</script>
 </body>
 </html>
