@@ -3416,4 +3416,32 @@ document.addEventListener('DOMContentLoaded',function(){
   if(document.getElementById('vf-range'))vfEst();
 })();
 </script>
+<!-- shawn-link injected -->
+<style>
+.shawn-link{color:#c9a040;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer;transition:color .15s}
+.shawn-link:hover{color:#a87f28}
+.sl-founder-photo.lit img{animation:shawnGlow 2.4s ease}
+@keyframes shawnGlow{0%{box-shadow:0 22px 55px rgba(13,27,42,.25)}18%{box-shadow:0 0 0 5px rgba(201,160,64,.95),0 0 52px 15px rgba(201,160,64,.82)}55%{box-shadow:0 0 0 5px rgba(201,160,64,.55),0 0 34px 8px rgba(201,160,64,.45)}100%{box-shadow:0 22px 55px rgba(13,27,42,.25)}}
+</style>
+<script>
+(function(){
+  var NAMES=['Shawn Sidhu','\u0a36\u0a4c\u0a28 \u0a38\u0a3f\u0a71\u0a27\u0a42','\u0936\u0949\u0928 \u0938\u093f\u0926\u094d\u0927\u0942'];
+  function linkify(){
+    var a=document.querySelector('.awards-sub'); if(!a||a.querySelector('.shawn-link'))return;
+    var html=a.innerHTML;
+    for(var i=0;i<NAMES.length;i++){var n=NAMES[i],idx=html.lastIndexOf(n);
+      if(idx>-1){a.innerHTML=html.slice(0,idx)+'<a href="#founder" class="shawn-link" aria-label="Meet Shawn Sidhu">'+n+'</a>'+html.slice(idx+n.length);return;}}
+  }
+  function glow(){var p=document.querySelector('.sl-founder-photo'); if(!p)return; p.classList.remove('lit'); void p.offsetWidth; p.classList.add('lit');}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest&&e.target.closest('.shawn-link'); if(!t)return;
+    e.preventDefault(); var f=document.getElementById('founder');
+    if(f)f.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(glow,450);
+  });
+  function init(){var a=document.querySelector('.awards-sub'); if(!a)return;
+    try{new MutationObserver(linkify).observe(a,{childList:true,characterData:true,subtree:true});}catch(e){}
+    linkify();}
+  if(document.readyState!=='loading')init(); else document.addEventListener('DOMContentLoaded',init);
+})();
+</script>
 </html>
