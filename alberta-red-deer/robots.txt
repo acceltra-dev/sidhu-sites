@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://injury-lawyer-red-deer.com/sitemap.xml

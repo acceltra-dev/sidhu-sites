@@ -1,0 +1,6 @@
+*.bak
+*.bak_*
+*.bak-*
+index.new.html
+.DS_Store
+node_modules

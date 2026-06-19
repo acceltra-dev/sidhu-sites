@@ -1,0 +1,42 @@
+{
+ "surrey": {
+  "hero_sub": "Based right here in Surrey. Sidhu Legal has recovered <span style=\"color:var(--gold);font-weight:600\">millions</span> for residents injured in car accidents, ICBC disputes, and personal injury claims throughout the Lower Mainland. No fee unless you win.",
+  "hero_img": "https://images.unsplash.com/photo-1697755790236-2a455c4aa22c?auto=format&fit=crop&w=1920&q=80"
+ },
+ "vancouver": {
+  "hero_sub": "Sidhu Legal has helped hundreds of Vancouver residents recover <span style=\"color:var(--gold);font-weight:600\">maximum compensation</span> after accidents, ICBC disputes, and personal injuries. No fees unless we win.",
+  "hero_img": "https://images.unsplash.com/photo-1611564494260-6f21b80af7ea?auto=format&fit=crop&w=1920&q=80"
+ },
+ "burnaby": {
+  "hero_sub": "Whether it's a car accident, slip and fall, or ICBC claim, Sidhu Legal has been fighting for Burnaby residents for over a decade. <span style=\"color:var(--gold);font-weight:600\">Maximum compensation.</span> No upfront fees.",
+  "hero_img": "https://images.unsplash.com/photo-1661381156934-26ccab4e2cd2?auto=format&fit=crop&w=1920&q=80"
+ },
+ "richmond": {
+  "hero_sub": "From No. 3 Road to Steveston, we know Richmond. Sidhu Legal helps injured residents recover <span style=\"color:var(--gold);font-weight:600\">full compensation</span> after accidents and ICBC disputes. No fee unless we win.",
+  "hero_img": "https://images.unsplash.com/photo-1635713044350-af433eaba5dd?auto=format&fit=crop&w=1920&q=80"
+ },
+ "coquitlam": {
+  "hero_sub": "From Lougheed Highway accidents to ICBC disputes across Port Coquitlam and Port Moody, Sidhu Legal has the local knowledge and courtroom experience to <span style=\"color:var(--gold);font-weight:600\">maximize your settlement</span>. No fees unless we win.",
+  "hero_img": "https://sidhulegal.com/WhatsApp%20Image%202026-05-10%20at%2014.19.48.jpeg"
+ },
+ "langley": {
+  "hero_sub": "Sidhu Legal has helped hundreds of Langley residents recover <span style=\"color:var(--gold);font-weight:600\">maximum compensation</span> after accidents, ICBC disputes, and personal injuries. No fees unless we win.",
+  "hero_img": "https://images.unsplash.com/photo-1611564494260-6f21b80af7ea?auto=format&fit=crop&w=1920&q=80"
+ },
+ "abbotsford": {
+  "hero_sub": "Highway 1 is one of the most dangerous corridors in BC. If you were injured near Abbotsford or anywhere in the Fraser Valley, Sidhu Legal will fight to recover <span style=\"color:var(--gold);font-weight:600\">everything you are owed</span>. No fees unless we win.",
+  "hero_img": "https://images.unsplash.com/photo-1586387791290-429b5a2e8e47?auto=format&fit=crop&w=1920&q=80"
+ },
+ "delta": {
+  "hero_sub": "From Highway 99 rear-endings to Tsawwassen intersection accidents, Sidhu Legal knows Delta's roads and fights to get you <span style=\"color:var(--gold);font-weight:600\">every dollar you are owed</span>. No fees unless we win.",
+  "hero_img": "https://images.unsplash.com/photo-1577464365163-894dc9e9d4d0?auto=format&fit=crop&w=1920&q=80"
+ },
+ "mapleridge": {
+  "hero_sub": "From Lougheed Highway collisions to accidents near Golden Ears Bridge, Sidhu Legal helps Maple Ridge residents recover the <span style=\"color:var(--gold);font-weight:600\">compensation they deserve</span>. No fees unless we win your case.",
+  "hero_img": "https://images.unsplash.com/photo-1541046469329-51deaf7358e8?auto=format&fit=crop&w=1920&q=80"
+ },
+ "newwestminster": {
+  "hero_sub": "From Columbia Street to the Queensborough Bridge, accidents happen across New Westminster every day. Sidhu Legal is here to protect your rights and fight for the <span style=\"color:var(--gold);font-weight:600\">full compensation you deserve</span>. No fees unless we win.",
+  "hero_img": "https://images.unsplash.com/photo-1755992857661-8a665523977b?auto=format&fit=crop&w=1920&q=80"
+ }
+}
