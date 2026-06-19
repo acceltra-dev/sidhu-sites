@@ -973,26 +973,26 @@
     <h2>Injury &amp; Accident Cases We Handle</h2>
     <p class="csub">From collisions to catastrophic injuries, we represent Calgary clients across the full range of personal injury and accident claims. Don't see yours? Ask us, the case review is free.</p>
     <div class="cases-grid">
-      <a href="/car-accident-lawyer-calgary/">Car Accident Lawyer Calgary</a>
-      <a href="/truck-accident-lawyer-calgary/">Truck Accident Lawyer Calgary</a>
-      <a href="/motorcycle-injury-lawyer-calgary/">Motorcycle Injury Lawyer Calgary</a>
-      <a href="/bicycle-accident-lawyer-calgary/">Bicycle Accident Lawyer Calgary</a>
-      <a href="/pedestrian-accident-lawyer-calgary/">Pedestrian Accident Lawyer Calgary</a>
-      <a href="/boat-accident-lawyer/">Boat Accident Lawyer</a>
-      <a href="/slip-and-fall-injury-lawyer-calgary/">Slip and Fall Injury Lawyer Calgary</a>
-      <a href="/recreational-injury-lawyer-calgary/">Recreational Injury Lawyer Calgary</a>
-      <a href="/brain-injury-lawyer/">Brain Injury Lawyer</a>
-      <a href="/spine-injury-lawyer/">Spine Injury Lawyer</a>
-      <a href="/catastrophic-injury-lawyer/">Catastrophic Injury Lawyer</a>
-      <a href="/dog-bite-lawyer/">Dog Bite Lawyer in Calgary</a>
-      <a href="/nursing-home-abuse-lawyer/">Nursing Home Abuse Lawyer</a>
-      <a href="/personal-injury-claim-calgary/">Personal Injury Claims</a>
-      <a href="/insurance-claims-lawyer/">Insurance Claims Lawyer</a>
-      <a href="/tort-claims-calgary/">Tort Claims Calgary</a>
-      <a href="/special-damages/">Special Damages</a>
-      <a href="/contributory-negligence-in-accidents/">Contributory Negligence Claims</a>
-      <a href="/drunk-driving-accident-calgary/">DUI &amp; Impaired Driving Lawyer</a>
-      <a href="/personal-injury-law/">Wrongful Death Lawyer Calgary</a>
+      <a href="car-accident-lawyer-calgary/">Car Accident Lawyer Calgary</a>
+      <a href="truck-accident-lawyer-calgary/">Truck Accident Lawyer Calgary</a>
+      <a href="motorcycle-injury-lawyer-calgary/">Motorcycle Injury Lawyer Calgary</a>
+      <a href="bicycle-accident-lawyer-calgary/">Bicycle Accident Lawyer Calgary</a>
+      <a href="pedestrian-accident-lawyer-calgary/">Pedestrian Accident Lawyer Calgary</a>
+      <a href="boat-accident-lawyer/">Boat Accident Lawyer</a>
+      <a href="slip-and-fall-injury-lawyer-calgary/">Slip and Fall Injury Lawyer Calgary</a>
+      <a href="recreational-injury-lawyer-calgary/">Recreational Injury Lawyer Calgary</a>
+      <a href="brain-injury-lawyer/">Brain Injury Lawyer</a>
+      <a href="spine-injury-lawyer/">Spine Injury Lawyer</a>
+      <a href="catastrophic-injury-lawyer/">Catastrophic Injury Lawyer</a>
+      <a href="dog-bite-lawyer/">Dog Bite Lawyer in Calgary</a>
+      <a href="nursing-home-abuse-lawyer/">Nursing Home Abuse Lawyer</a>
+      <a href="personal-injury-claim-calgary/">Personal Injury Claims</a>
+      <a href="insurance-claims-lawyer/">Insurance Claims Lawyer</a>
+      <a href="tort-claims-calgary/">Tort Claims Calgary</a>
+      <a href="special-damages/">Special Damages</a>
+      <a href="contributory-negligence-in-accidents/">Contributory Negligence Claims</a>
+      <a href="drunk-driving-accident-calgary/">DUI &amp; Impaired Driving Lawyer</a>
+      <a href="personal-injury-law/">Wrongful Death Lawyer Calgary</a>
     </div>
     <p style="text-align:center;margin-top:2.3rem;color:#aab6c4;font-size:.96rem">Also serving Calgary families: <a href="#contact" style="color:#c9a040;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(201,160,64,.4)">Wills, Estate Planning &amp; Family Law &rarr;</a></p>
   </div>
@@ -3447,5 +3447,15 @@ document.addEventListener('DOMContentLoaded',function(){
     linkify();}
   if(document.readyState!=='loading')init(); else document.addEventListener('DOMContentLoaded',init);
 })();
+</script>
+<!-- cases-link fix -->
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.cases-grid a[href="#contact"]');
+  if(!a)return; e.preventDefault();
+  var ct=a.textContent.trim();
+  document.querySelectorAll('input[name="case_type"]').forEach(function(i){i.value=ct;});
+  var c=document.getElementById('contact'); if(c)c.scrollIntoView({behavior:'smooth',block:'start'});
+},true);
 </script>
 </html>

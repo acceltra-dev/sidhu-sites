@@ -975,27 +975,26 @@
     <h2>Injury &amp; Accident Cases We Handle</h2>
     <p class="csub">From collisions to catastrophic injuries, we represent Edmonton clients across the full range of personal injury and accident claims. Don't see yours? Ask us, the case review is free.</p>
     <div class="cases-grid">
-      <a href="/personal-injury-law/car-accident/">Car Accident Lawyer Edmonton</a>
-      <a href="/personal-injury-law/motorcycle-accident-lawyer-edmonton/">Motorcycle Injury Lawyer Edmonton</a>
-      <a href="/personal-injury-law/bicycle-accident/">Bicycle Accident Lawyer Edmonton</a>
-      <a href="/personal-injury-law/pedestrian-accident-lawyer/">Pedestrian Accident Lawyer Edmonton</a>
-      <a href="/personal-injury-law/boat-accident-lawyer/">Boat Accident Lawyer</a>
-      <a href="/personal-injury-law/slip-and-fall/">Slip and Fall Injury Lawyer Edmonton</a>
-      <a href="/personal-injury-law/brain-injury-lawyer/">Brain Injury Lawyer</a>
-      <a href="/personal-injury-law/spinal-cord-injury-lawyer/">Spinal Cord Injury Lawyer</a>
-      <a href="/personal-injury-law/burn-injury-lawyer/">Burn Injury Lawyer</a>
-      <a href="/personal-injury-law/dog-bite-lawyer/">Dog Bite Lawyer in Edmonton</a>
-      <a href="/personal-injury-law/nursing-home-abuse/">Nursing Home Abuse Lawyer</a>
-      <a href="/personal-injury-law/personal-injury-claim/">Personal Injury Claims</a>
-      <a href="/personal-injury-law/insurance-claim-lawyer/">Insurance Claims Lawyer</a>
-      <a href="/personal-injury-law/tort-claim/">Tort Claims Edmonton</a>
-      <a href="/personal-injury-law/occupiers-liability-edmonton/">Occupiers Liability</a>
-      <a href="/personal-injury-law/long-term-disability-lawyer/">Long-Term Disability Lawyer</a>
-      <a href="/personal-injury-law/lawyer-negligence/">Legal Malpractice Lawyer</a>
-      <a href="/personal-injury-law/drunk-driving-lawyer/">DUI &amp; Impaired Driving Lawyer</a>
-      <a href="/personal-injury-law/monsanto-roundup-class-action-canada/">Roundup Class Action</a>
-      <a href="/personal-injury-law/">Wrongful Death Lawyer Edmonton</a>
-
+      <a href="personal-injury-law/car-accident/">Car Accident Lawyer Edmonton</a>
+      <a href="personal-injury-law/motorcycle-accident-lawyer-edmonton/">Motorcycle Injury Lawyer Edmonton</a>
+      <a href="personal-injury-law/bicycle-accident/">Bicycle Accident Lawyer Edmonton</a>
+      <a href="personal-injury-law/pedestrian-accident-lawyer/">Pedestrian Accident Lawyer Edmonton</a>
+      <a href="personal-injury-law/boat-accident-lawyer/">Boat Accident Lawyer</a>
+      <a href="personal-injury-law/slip-and-fall/">Slip and Fall Injury Lawyer Edmonton</a>
+      <a href="personal-injury-law/brain-injury-lawyer/">Brain Injury Lawyer</a>
+      <a href="personal-injury-law/spinal-cord-injury-lawyer/">Spinal Cord Injury Lawyer</a>
+      <a href="personal-injury-law/burn-injury-lawyer/">Burn Injury Lawyer</a>
+      <a href="personal-injury-law/dog-bite-lawyer/">Dog Bite Lawyer in Edmonton</a>
+      <a href="personal-injury-law/nursing-home-abuse/">Nursing Home Abuse Lawyer</a>
+      <a href="personal-injury-law/personal-injury-claim/">Personal Injury Claims</a>
+      <a href="personal-injury-law/insurance-claim-lawyer/">Insurance Claims Lawyer</a>
+      <a href="personal-injury-law/tort-claim/">Tort Claims Edmonton</a>
+      <a href="personal-injury-law/occupiers-liability-edmonton/">Occupiers Liability</a>
+      <a href="personal-injury-law/long-term-disability-lawyer/">Long-Term Disability Lawyer</a>
+      <a href="personal-injury-law/lawyer-negligence/">Legal Malpractice Lawyer</a>
+      <a href="personal-injury-law/drunk-driving-lawyer/">DUI &amp; Impaired Driving Lawyer</a>
+      <a href="personal-injury-law/monsanto-roundup-class-action-canada/">Roundup Class Action</a>
+      <a href="personal-injury-law/">Wrongful Death Lawyer Edmonton</a>
     </div>
     <p style="text-align:center;margin-top:2.3rem;color:#aab6c4;font-size:.96rem">Also serving Edmonton families: <a href="#contact" style="color:#c9a040;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(201,160,64,.4)">Wills, Estate Planning &amp; Family Law &rarr;</a></p>
   </div>
@@ -3458,5 +3457,15 @@ document.addEventListener('DOMContentLoaded',function(){
     linkify();}
   if(document.readyState!=='loading')init(); else document.addEventListener('DOMContentLoaded',init);
 })();
+</script>
+<!-- cases-link fix -->
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.cases-grid a[href="#contact"]');
+  if(!a)return; e.preventDefault();
+  var ct=a.textContent.trim();
+  document.querySelectorAll('input[name="case_type"]').forEach(function(i){i.value=ct;});
+  var c=document.getElementById('contact'); if(c)c.scrollIntoView({behavior:'smooth',block:'start'});
+},true);
 </script>
 </html>

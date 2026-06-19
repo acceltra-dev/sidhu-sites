@@ -975,27 +975,26 @@
     <h2>Injury &amp; Accident Cases We Handle</h2>
     <p class="csub">From collisions to catastrophic injuries, we represent Sherwood Park clients across the full range of personal injury and accident claims. Don't see yours? Ask us, the case review is free.</p>
     <div class="cases-grid">
-      <a href="#contact">Car Accident Lawyer Sherwood Park</a>
-      <a href="#contact">Truck Accident Lawyer Sherwood Park</a>
-      <a href="#contact">Motorcycle Injury Lawyer Sherwood Park</a>
-      <a href="#contact">Bicycle Accident Lawyer Sherwood Park</a>
-      <a href="#contact">Pedestrian Accident Lawyer Sherwood Park</a>
-      <a href="#contact">Boat Accident Lawyer</a>
-      <a href="#contact">Slip and Fall Injury Lawyer Sherwood Park</a>
-      <a href="#contact">Recreational Injury Lawyer Sherwood Park</a>
-      <a href="#contact">Brain Injury Lawyer</a>
-      <a href="#contact">Spine Injury Lawyer</a>
-      <a href="#contact">Catastrophic Injury Lawyer</a>
-      <a href="#contact">Dog Bite Lawyer in Sherwood Park</a>
-      <a href="#contact">Nursing Home Abuse Lawyer</a>
-      <a href="#contact">Personal Injury Claims</a>
-      <a href="#contact">Insurance Claims Lawyer</a>
-      <a href="#contact">Tort Claims Sherwood Park</a>
-      <a href="#contact">Special Damages</a>
-      <a href="#contact">Contributory Negligence Claims</a>
-      <a href="#contact">DUI &amp; Impaired Driving Lawyer</a>
-      <a href="#contact">Wrongful Death Lawyer Sherwood Park</a>
-    
+      <a href="car-accident-lawyer-sherwood-park/">Car Accident Lawyer Sherwood Park</a>
+      <a href="truck-accident-lawyer-sherwood-park/">Truck Accident Lawyer Sherwood Park</a>
+      <a href="motorcycle-injury-lawyer-sherwood-park/">Motorcycle Injury Lawyer Sherwood Park</a>
+      <a href="bicycle-accident-lawyer-sherwood-park/">Bicycle Accident Lawyer Sherwood Park</a>
+      <a href="pedestrian-accident-lawyer-sherwood-park/">Pedestrian Accident Lawyer Sherwood Park</a>
+      <a href="boat-accident-lawyer/">Boat Accident Lawyer</a>
+      <a href="slip-and-fall-injury-lawyer-sherwood-park/">Slip and Fall Injury Lawyer Sherwood Park</a>
+      <a href="recreational-injury-lawyer-sherwood-park/">Recreational Injury Lawyer Sherwood Park</a>
+      <a href="brain-injury-lawyer/">Brain Injury Lawyer</a>
+      <a href="spine-injury-lawyer/">Spine Injury Lawyer</a>
+      <a href="catastrophic-injury-lawyer/">Catastrophic Injury Lawyer</a>
+      <a href="dog-bite-lawyer-in-sherwood-park/">Dog Bite Lawyer in Sherwood Park</a>
+      <a href="nursing-home-abuse-lawyer/">Nursing Home Abuse Lawyer</a>
+      <a href="personal-injury-claims/">Personal Injury Claims</a>
+      <a href="insurance-claims-lawyer/">Insurance Claims Lawyer</a>
+      <a href="tort-claims-sherwood-park/">Tort Claims Sherwood Park</a>
+      <a href="special-damages/">Special Damages</a>
+      <a href="contributory-negligence-claims/">Contributory Negligence Claims</a>
+      <a href="dui-impaired-driving-lawyer/">DUI &amp; Impaired Driving Lawyer</a>
+      <a href="wrongful-death-lawyer-sherwood-park/">Wrongful Death Lawyer Sherwood Park</a>
     </div>
     <p style="text-align:center;margin-top:2.3rem;color:#aab6c4;font-size:.96rem">Also serving Sherwood Park families: <a href="#contact" style="color:#c9a040;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(201,160,64,.4)">Wills, Estate Planning &amp; Family Law &rarr;</a></p>
   </div>
@@ -3449,5 +3448,15 @@ document.addEventListener('DOMContentLoaded',function(){
     linkify();}
   if(document.readyState!=='loading')init(); else document.addEventListener('DOMContentLoaded',init);
 })();
+</script>
+<!-- cases-link fix -->
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('.cases-grid a[href="#contact"]');
+  if(!a)return; e.preventDefault();
+  var ct=a.textContent.trim();
+  document.querySelectorAll('input[name="case_type"]').forEach(function(i){i.value=ct;});
+  var c=document.getElementById('contact'); if(c)c.scrollIntoView({behavior:'smooth',block:'start'});
+},true);
 </script>
 </html>
