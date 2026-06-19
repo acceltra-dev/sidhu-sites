@@ -94,7 +94,8 @@ for d,(city,phone,tel) in CITIES.items():
     # build sibling chip list (relative ../slug/)
     for i,(slug,title) in enumerate(pairs):
         phrase,sub,bullets=cat_for(title)
-        others=''.join(f'<a href="../{o}/">{ot}</a>' for o,ot in pairs if o!=slug)
+        up='../'*(slug.count('/')+1)
+        others=''.join(f'<a href="{up}{o}/">{ot}</a>' for o,ot in pairs if o!=slug)
         intro=(f"If you or a loved one suffered a {phrase} in {city}, you may be owed compensation for medical costs, "
                f"lost income, and pain and suffering. Alberta Accident Law has recovered millions for injured Albertans, "
                f"and we work on contingency, so you pay nothing unless we win.")
@@ -104,7 +105,7 @@ for d,(city,phone,tel) in CITIES.items():
         page=(TPL.replace('{{TITLE}}',title).replace('{{CITY}}',city).replace('{{PHONE}}',phone)
               .replace('{{TEL}}',tel).replace('{{IMAGE}}','https://images.unsplash.com/photo-'+img_for(i))
               .replace('{{SUB}}',sub).replace('{{H2}}',title).replace('{{INTRO}}',intro)
-              .replace('{{BULLETS}}',bl).replace('{{CLOSING}}',closing).replace('{{OTHERS}}',others)
+              .replace('{{BULLETS}}',bl).replace('{{CLOSING}}',closing).replace('{{OTHERS}}',others).replace('{{UP}}',up)
               .replace('{{META}}',f"{title} - free case review, no fee unless we win. Serving {city}, Alberta."))
         os.makedirs(f'{d}/{slug}', exist_ok=True)
         open(f'{d}/{slug}/index.html','w',encoding='utf-8').write(page)
