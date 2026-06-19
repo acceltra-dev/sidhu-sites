@@ -66,6 +66,22 @@ ARTICLES=[
 <p>Injury claims are handled on a <strong>contingency basis</strong>: no upfront fees, and we only get paid if we win. There is no financial risk to having a professional fight for your maximum recovery.</p>
 <h2>When to call</h2>
 <p>The earlier the better, evidence is fresher and deadlines are safe. If you were injured in {{CITY}} or anywhere in Alberta, a free case review costs you nothing and could be worth a great deal.</p>"""},
+ {'slug':'mistakes-that-lower-your-settlement','tag':'Maximize Your Claim','img':'1567613074247-5e2564e1b90a',
+  'title':'5 Mistakes That Can Shrink Your Injury Settlement in {{CITY}}',
+  'excerpt':'Small missteps can quietly cost you thousands. Here are the most common ways injured Albertans lower their own payout, and how to avoid them.',
+  'body':"""<p>You can do everything right after an accident and still lose money if you fall into a few common traps. Insurers count on these mistakes. Here are five that most often shrink a {{CITY}} injury settlement, and how to protect your <strong>maximum compensation</strong>.</p>
+<h2>1. Waiting too long to get treatment</h2>
+<p>Every day you delay medical care gives the insurer an argument that you weren't really hurt. See a doctor early, follow the treatment plan, and keep every record. Consistent treatment is some of the strongest evidence your claim has.</p>
+<h2>2. Giving a recorded statement</h2>
+<p>Adjusters ask for a recorded statement "just for the file." In reality, it is used to lock in your words and later argue your injuries are minor. You are not required to give one, decline politely and speak to a lawyer first.</p>
+<h2>3. Accepting the first offer</h2>
+<p>The first number is almost always a fraction of what a claim is worth, made before your future treatment and lost income are known. Once you sign the release, the file is closed for good, even if you get worse.</p>
+<h2>4. Posting about it on social media</h2>
+<p>One photo of you smiling at a family event can be twisted into "proof" you've recovered. Until your claim is resolved, assume the insurer is watching, and keep the accident and your activities offline.</p>
+<h2>5. Handling a serious claim alone</h2>
+<p>For minor matters you may be fine on your own. But when real money is at stake, insurers settle very differently with someone who has a lawyer ready for court. That difference goes straight to you.</p>
+<h2>Protect what you're owed</h2>
+<p>Avoiding these mistakes can be worth thousands. If you were injured in {{CITY}}, we'll review your claim for free and fight for every dollar, no fee unless we win.</p>"""},
 ]
 
 IDX=open('_alberta_blog_index_template.html',encoding='utf-8').read()
