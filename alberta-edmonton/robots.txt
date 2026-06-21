@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://injury-lawyer-edmonton.com/sitemap_index.xml

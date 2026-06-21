@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://injury-lawyer-sherwood-park.com/sitemap.xml
